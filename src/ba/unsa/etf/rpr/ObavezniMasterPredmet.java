@@ -16,4 +16,14 @@ public class ObavezniMasterPredmet extends MasterPredmet {
             rezultat += ms.ispisiStudenta() + "\n";
         return rezultat;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof ObavezniMasterPredmet) {
+            ObavezniMasterPredmet omp = (ObavezniMasterPredmet) o;
+            if (omp.getNazivPredmeta().equals(this.getNazivPredmeta()) && omp.getSifraPredmeta().equals(this.getSifraPredmeta()) && omp.getECTS_BODOVI() == this.getECTS_BODOVI() && omp.getMAX_BROJ_STUDENATA() == this.getMAX_BROJ_STUDENATA())
+                return true;
+        }
+        return false;
+    }
 }
