@@ -10,4 +10,8 @@ public class MasterCiklus extends Ciklus {
         super(brojSemestara);
         this.master = new ArrayList<>(this.getBROJ_SEMESTARA());
     }
+
+    public List<MasterSemestar> getMaster() {
+        return master;
+    }
 }
