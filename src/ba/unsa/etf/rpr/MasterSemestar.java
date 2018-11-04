@@ -10,8 +10,8 @@ public class MasterSemestar extends Semestar {
 
     public MasterSemestar(int brojSemestra, int ectsBodovi, int brojObaveznihPredmeta, int brojIzbornihPredmeta) {
         super(brojSemestra, ectsBodovi, brojObaveznihPredmeta, brojIzbornihPredmeta);
-        obavezniPredmeti = new ArrayList<>(this.getBROJ_OBAVEZNIH_PREDMETA());
-        izborniPredmeti = new ArrayList<>(this.getBROJ_IZBORNIH_PREDMETA());
+        obavezniPredmeti = new ArrayList<>(this.getTrenutniBrojObaveznihPredmeta());
+        izborniPredmeti = new ArrayList<>(this.getTrenutniBrojIzbornihPredmeta());
     }
 
     public List<ObavezniMasterPredmet> getObavezniPredmeti() {
