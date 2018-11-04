@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BachelorPredmet extends Predmet {
-    private List<MasterStudent> studenti;
+    private List<BachelorStudent> studenti;
 
-    public MasterPredmet(String nazivPredmeta, String sifraPredmeta, int ects, int maxBrojStudenata) {
+    public BachelorPredmet(String nazivPredmeta, String sifraPredmeta, int ects, int maxBrojStudenata) {
         super(nazivPredmeta, sifraPredmeta, ects, maxBrojStudenata);
         this.studenti = new ArrayList<>(this.getTrenutniBrojStudenata());
     }
+
+    public List<BachelorStudent> getStudenti() {
+        return studenti;
+    }
+
+    
 }
