@@ -9,4 +9,14 @@ public class MasterStudent extends Student {
     public String ispisiStudenta() {
         return ("Master" + super.ispisiStudenta());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof MasterStudent) {
+            MasterStudent ms = (MasterStudent) o;
+            if (this.getIme().equals(ms.getIme()) && this.getPrezime().equals(ms.getPrezime()) && this.getBrojIndeksa() == ms.getBrojIndeksa())
+                return true;
+        }
+        return false;
+    }
 }
