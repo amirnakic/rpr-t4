@@ -81,5 +81,6 @@ public class MasterSemestar extends Semestar {
         String rezultat = new String("");
         for (ObavezniMasterPredmet omp : getObavezniPredmeti()) rezultat += omp.ispisiPredmet() + "\n";
         for (IzborniMasterPredmet imp : getIzborniPredmeti()) rezultat += imp.ispisiPredmet() + "\n";
+        return rezultat;
     }
 }
