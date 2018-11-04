@@ -16,9 +16,11 @@ public class BachelorPredmet extends Predmet {
         return studenti;
     }
 
-    public void dodajStudenta(BachelorStudent bs) throws IllegalArgumentException {
+    public void dodajStudenta(BachelorStudent bs) throws IllegalArgumentException, ArrayStoreException {
         if (getStudenti().contains(bs))
             throw new IllegalArgumentException(bs.ispisiStudenta() + " je već upisan na ovaj predmet.");
+        else if (getStudenti().size() == this.getMAX_BROJ_STUDENATA())
+            throw new ArrayStoreException(bs.ispisiStudenta() + " nije upisan jer je popunjen kapacitet predmeta.");
         else {
             getStudenti().add(bs);
             setTrenutniBrojStudenata(getTrenutniBrojStudenata() + 1);

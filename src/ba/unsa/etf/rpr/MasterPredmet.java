@@ -16,9 +16,11 @@ public class MasterPredmet extends Predmet {
         return studenti;
     }
 
-    public void dodajStudenta(MasterStudent ms) throws IllegalArgumentException {
+    public void dodajStudenta(MasterStudent ms) throws IllegalArgumentException, ArrayStoreException {
         if (getStudenti().contains(ms))
             throw new IllegalArgumentException(ms.ispisiStudenta() + " je već upisan na ovaj predmet.");
+        else if (getStudenti().size() == this.getMAX_BROJ_STUDENATA())
+            throw new ArrayStoreException(ms.ispisiStudenta() + " nije upisan jer je popunjen kapacitet predmeta.");
         else {
             getStudenti().add(ms);
             setTrenutniBrojStudenata(getTrenutniBrojStudenata() + 1);
