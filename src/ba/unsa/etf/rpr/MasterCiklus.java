@@ -9,7 +9,7 @@ public class MasterCiklus extends Ciklus {
 
     public MasterCiklus(int brojSemestara) {
         super(brojSemestara);
-        this.master = new ArrayList<>(this.getBROJ_SEMESTARA());
+        this.master = new ArrayList<>(this.getTrenutniBrojSemestara());
     }
 
     public List<MasterSemestar> getMaster() {
