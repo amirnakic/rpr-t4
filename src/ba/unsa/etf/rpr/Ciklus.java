@@ -16,4 +16,8 @@ public class Ciklus {
     public int getBROJ_SEMESTARA() {
         return BROJ_SEMESTARA;
     }
+
+    public void setTrenutniBrojSemestara(int trenutniBrojSemestara) {
+        this.trenutniBrojSemestara = trenutniBrojSemestara;
+    }
 }
