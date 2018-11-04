@@ -20,4 +20,8 @@ public class Ciklus {
     public void setTrenutniBrojSemestara(int trenutniBrojSemestara) {
         this.trenutniBrojSemestara = trenutniBrojSemestara;
     }
+
+    public String ispisiCiklus() {
+        return ("Ciklus se sastoji iz sljedećeg broja semestara: " + getBROJ_SEMESTARA());
+    }
 }
