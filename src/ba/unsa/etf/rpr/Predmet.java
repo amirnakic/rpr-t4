@@ -42,6 +42,10 @@ public class Predmet {
         this.sifraPredmeta = sifraPredmeta;
     }
 
+    public void setTrenutniBrojStudenata(int trenutniBrojStudenata) {
+        this.trenutniBrojStudenata = trenutniBrojStudenata;
+    }
+
     public String ispisiPredmet() {
         return ("Predmet: " + this.getNazivPredmeta() + "(" + this.getSifraPredmeta() + " - " + this.getECTS_BODOVI() + " ECTS - " + this.getTrenutniBrojStudenata() + "/" + this.getMAX_BROJ_STUDENATA() + ")");
     }
