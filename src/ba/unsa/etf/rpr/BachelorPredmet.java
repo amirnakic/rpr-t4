@@ -22,4 +22,16 @@ public class BachelorPredmet extends Predmet {
             setTrenutniBrojStudenata(getTrenutniBrojStudenata() + 1);
         }
     }
+
+    public void brisiStudenta(BachelorStudent bs) throws IllegalArgumentException {
+        int indeks = 0;
+        for (BachelorStudent bs1 : getStudenti()) {
+            if (bs1.equals(bs)) {
+                getStudenti().remove(indeks);
+                setTrenutniBrojStudenata(getTrenutniBrojStudenata() - 1);
+            }
+            indeks++;
+        }
+        if (indeks == getStudenti().size()) throw new IllegalArgumentException(bs.ispisiStudenta() + " nije upisan na ovaj predmet.");
+    }
 }
