@@ -34,4 +34,11 @@ public class BachelorPredmet extends Predmet {
         }
         if (indeks == getStudenti().size()) throw new IllegalArgumentException(bs.ispisiStudenta() + " nije upisan na ovaj predmet.");
     }
+
+    public String ispisiStudenteNaPredmetu() {
+        String rezultat = new String("");
+        for (BachelorStudent bs : this.getStudenti())
+            rezultat += bs.ispisiStudenta() + "\n";
+        return rezultat;
+    }
 }
