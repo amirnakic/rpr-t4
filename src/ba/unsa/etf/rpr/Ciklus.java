@@ -8,4 +8,12 @@ public class Ciklus {
         this.BROJ_SEMESTARA = brojSemestara;
         this.trenutniBrojSemestara = 0;
     }
+
+    public int getTrenutniBrojSemestara() {
+        return trenutniBrojSemestara;
+    }
+
+    public int getBROJ_SEMESTARA() {
+        return BROJ_SEMESTARA;
+    }
 }
