@@ -38,4 +38,8 @@ public class BachelorCiklus extends Ciklus {
         throw new IllegalArgumentException(bs.ispisiSemestar() + " nije dodan u ovaj ciklus.");
     }
 
+    @Override
+    public String ispisiCiklus() {
+        return ("Bachelor" + super.ispisiCiklus());
+    }
 }
