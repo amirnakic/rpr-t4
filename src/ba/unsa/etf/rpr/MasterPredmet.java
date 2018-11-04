@@ -34,4 +34,11 @@ public class MasterPredmet extends Predmet {
         }
         if (indeks == getStudenti().size()) throw new IllegalArgumentException(ms.ispisiStudenta() + " nije upisan na ovaj predmet.");
     }
+
+    public String ispisiStudenteNaPredmetu() {
+        String rezultat = new String("");
+        for (MasterStudent ms : this.getStudenti())
+            rezultat += ms.ispisiStudenta() + "\n";
+        return rezultat;
+    }
 }
