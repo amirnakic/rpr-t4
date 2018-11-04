@@ -42,4 +42,16 @@ public class Semestar {
     public int getBROJ_IZBORNIH_PREDMETA() {
         return BROJ_IZBORNIH_PREDMETA;
     }
+
+    public void setTrenutniBrojECTSBodova(int trenutniBrojECTSBodova) {
+        this.trenutniBrojECTSBodova = trenutniBrojECTSBodova;
+    }
+
+    public void setTrenutniBrojObaveznihPredmeta(int trenutniBrojObaveznihPredmeta) {
+        this.trenutniBrojObaveznihPredmeta = trenutniBrojObaveznihPredmeta;
+    }
+
+    public void setTrenutniBrojIzbornihPredmeta(int trenutniBrojIzbornihPredmeta) {
+        this.trenutniBrojIzbornihPredmeta = trenutniBrojIzbornihPredmeta;
+    }
 }
