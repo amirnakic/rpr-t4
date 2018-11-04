@@ -17,7 +17,8 @@ public class MasterPredmet extends Predmet {
     }
 
     public void dodajStudenta(MasterStudent ms) throws IllegalArgumentException {
-        if (getStudenti().contains(ms)) throw new IllegalArgumentException(ms.ispisiStudenta() + " je već upisan na ovaj predmet.");
+        if (getStudenti().contains(ms))
+            throw new IllegalArgumentException(ms.ispisiStudenta() + " je već upisan na ovaj predmet.");
         else {
             getStudenti().add(ms);
             setTrenutniBrojStudenata(getTrenutniBrojStudenata() + 1);
@@ -34,6 +35,15 @@ public class MasterPredmet extends Predmet {
             }
         }
         throw new IllegalArgumentException(ms.ispisiStudenta() + " nije upisan na ovaj predmet.");
+    }
+
+    public MasterStudent pronadjiStudentaPoIndeksu(int brojIndeksa) throws IllegalArgumentException {
+        Iterator it = getStudenti().iterator();
+        while(it.hasNext()) {
+            MasterStudent ms = (MasterStudent) it.next();
+            if (ms.getBrojIndeksa() == brojIndeksa) return ms;
+        }
+        throw new IllegalArgumentException("Student sa indeksom " + brojIndeksa + " nije upisan na ovaj predmet.");
     }
 
     public String ispisiStudenteNaPredmetu() {

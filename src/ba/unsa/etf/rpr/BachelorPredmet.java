@@ -17,7 +17,8 @@ public class BachelorPredmet extends Predmet {
     }
 
     public void dodajStudenta(BachelorStudent bs) throws IllegalArgumentException {
-        if (getStudenti().contains(bs)) throw new IllegalArgumentException(bs.ispisiStudenta() + " je već upisan na ovaj predmet.");
+        if (getStudenti().contains(bs))
+            throw new IllegalArgumentException(bs.ispisiStudenta() + " je već upisan na ovaj predmet.");
         else {
             getStudenti().add(bs);
             setTrenutniBrojStudenata(getTrenutniBrojStudenata() + 1);
