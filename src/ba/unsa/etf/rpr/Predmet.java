@@ -7,8 +7,8 @@ public class Predmet {
     private final int MAX_BROJ_STUDENATA;
 
     public Predmet(String nazivPredmeta, String sifraPredmeta, int ects, int maxBrojStudenata) {
-        this.nazivPredmeta = nazivPredmeta;
-        this.sifraPredmeta = sifraPredmeta;
+        this.setNazivPredmeta(nazivPredmeta);
+        this.setSifraPredmeta(sifraPredmeta);
         this.ECTS_BODOVI = ects;
         this.MAX_BROJ_STUDENATA = maxBrojStudenata;
     }
@@ -31,5 +31,13 @@ public class Predmet {
 
     public int getMAX_BROJ_STUDENATA() {
         return MAX_BROJ_STUDENATA;
+    }
+
+    public void setNazivPredmeta(String nazivPredmeta) {
+        this.nazivPredmeta = nazivPredmeta;
+    }
+
+    public void setSifraPredmeta(String sifraPredmeta) {
+        this.sifraPredmeta = sifraPredmeta;
     }
 }
