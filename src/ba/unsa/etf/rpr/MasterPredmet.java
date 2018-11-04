@@ -39,7 +39,7 @@ public class MasterPredmet extends Predmet {
 
     public MasterStudent dajStudentaPoIndeksu(int brojIndeksa) throws IllegalArgumentException {
         Iterator it = getStudenti().iterator();
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             MasterStudent ms = (MasterStudent) it.next();
             if (ms.getBrojIndeksa() == brojIndeksa) return ms;
         }

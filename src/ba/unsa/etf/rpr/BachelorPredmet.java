@@ -39,7 +39,7 @@ public class BachelorPredmet extends Predmet {
 
     public BachelorStudent dajStudentaPoIndeksu(int brojIndeksa) throws IllegalArgumentException {
         Iterator it = getStudenti().iterator();
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             BachelorStudent ms = (BachelorStudent) it.next();
             if (ms.getBrojIndeksa() == brojIndeksa) return ms;
         }
