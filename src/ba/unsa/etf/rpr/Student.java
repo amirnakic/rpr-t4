@@ -35,8 +35,6 @@ public class Student {
     }
 
     public String ispisiStudenta() {
-        String rezultat = new String("");
-        rezultat = "Student: " + this.getIme() + " " + this.getPrezime() + "(" + this.getBrojIndeksa() + ")";
-        return rezultat;
+        return ("Student: " + this.getIme() + " " + this.getPrezime() + "(" + this.getBrojIndeksa() + ")");
     }
 }
