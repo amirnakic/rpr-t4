@@ -56,6 +56,6 @@ public class Semestar {
     }
 
     public String ispisiSemestar() {
-        return ("Semestar broj " + getBrojSemestra() + " , sa ukupno " + getBROJ_OBAVEZNIH_PREDMETA() + " obeznih i " + getBROJ_IZBORNIH_PREDMETA() + " izbornih predmeta koji nose ukupno " + getUKUPAN_BROJ_ECTS_BODOVA() + " ECTS-bodova.");
+        return ("Semestar broj " + getBrojSemestra() + " sa ukupno " + getBROJ_OBAVEZNIH_PREDMETA() + " obaveznih i " + getBROJ_IZBORNIH_PREDMETA() + " izbornih predmeta koji nose ukupno " + getUKUPAN_BROJ_ECTS_BODOVA() + " ECTS-bodova.");
     }
 }
