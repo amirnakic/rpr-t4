@@ -14,4 +14,32 @@ public class Semestar {
         this.trenutniBrojObaveznihPredmeta = 0;
         this.trenutniBrojIzbornihPredmeta = 0;
     }
+
+    public int getBrojSemestra() {
+        return brojSemestra;
+    }
+
+    public int getTrenutniBrojECTSBodova() {
+        return trenutniBrojECTSBodova;
+    }
+
+    public int getTrenutniBrojObaveznihPredmeta() {
+        return trenutniBrojObaveznihPredmeta;
+    }
+
+    public int getTrenutniBrojIzbornihPredmeta() {
+        return trenutniBrojIzbornihPredmeta;
+    }
+
+    public int getUKUPAN_BROJ_ECTS_BODOVA() {
+        return UKUPAN_BROJ_ECTS_BODOVA;
+    }
+
+    public int getBROJ_OBAVEZNIH_PREDMETA() {
+        return BROJ_OBAVEZNIH_PREDMETA;
+    }
+
+    public int getBROJ_IZBORNIH_PREDMETA() {
+        return BROJ_IZBORNIH_PREDMETA;
+    }
 }
