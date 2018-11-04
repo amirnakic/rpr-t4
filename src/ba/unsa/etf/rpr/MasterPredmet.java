@@ -11,5 +11,12 @@ public class MasterPredmet extends Predmet {
         this.studenti = new ArrayList<>(this.getTrenutniBrojStudenata());
     }
 
-    
+    public List<MasterStudent> getStudenti() {
+        return studenti;
+    }
+
+    public void dodajStudenta(MasterStudent s) throws IllegalArgumentException {
+        if (getStudenti().contains(s)) throw new IllegalArgumentException(s.ispisiStudenta() + " je već upisan na ovaj predmet.");
+        else getStudenti().add(s);
+    }
 }
