@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class BachelorCiklus extends Ciklus {
@@ -23,4 +24,18 @@ public class BachelorCiklus extends Ciklus {
             this.setTrenutniBrojSemestara(this.getTrenutniBrojSemestara() + 1);
         }
     }
+
+    public void brisiSemestar(BachelorSemestar bs) throws IllegalArgumentException {
+        Iterator it = getBachelor().iterator();
+        while(it.hasNext()) {
+            BachelorSemestar bs1 = (BachelorSemestar) it.next();
+            if (bs1.equals(bs)) {
+                getBachelor().remove(bs);
+                this.setTrenutniBrojSemestara(this.getTrenutniBrojSemestara() - 1);
+                return;
+            }
+        }
+        throw new IllegalArgumentException(bs.ispisiSemestar() + " nije dodan u ovaj ciklus.");
+    }
+
 }
