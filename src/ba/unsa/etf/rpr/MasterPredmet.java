@@ -15,24 +15,23 @@ public class MasterPredmet extends Predmet {
         return studenti;
     }
 
-    public void dodajStudenta(MasterStudent s) throws IllegalArgumentException {
-        if (getStudenti().contains(s)) throw new IllegalArgumentException(s.ispisiStudenta() + " je već upisan na ovaj predmet.");
+    public void dodajStudenta(MasterStudent ms) throws IllegalArgumentException {
+        if (getStudenti().contains(ms)) throw new IllegalArgumentException(ms.ispisiStudenta() + " je već upisan na ovaj predmet.");
         else {
-            getStudenti().add(s);
+            getStudenti().add(ms);
             setTrenutniBrojStudenata(getTrenutniBrojStudenata() + 1);
         }
     }
 
-    public void brisiStudenta(MasterStudent s) throws IllegalArgumentException {
+    public void brisiStudenta(MasterStudent ms) throws IllegalArgumentException {
         int indeks = 0;
-        for (MasterStudent ms : getStudenti()) {
-            if (ms.equals(s)) {
+        for (MasterStudent ms1 : getStudenti()) {
+            if (ms1.equals(ms)) {
                 getStudenti().remove(indeks);
                 setTrenutniBrojStudenata(getTrenutniBrojStudenata() - 1);
             }
             indeks++;
         }
-        if (indeks == getStudenti().size()) throw new IllegalArgumentException(s.ispisiStudenta() + " nije upisan na ovaj predmet.");
+        if (indeks == getStudenti().size()) throw new IllegalArgumentException(ms.ispisiStudenta() + " nije upisan na ovaj predmet.");
     }
-    
 }
