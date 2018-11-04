@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class MasterPredmet extends Predmet {
@@ -24,15 +25,15 @@ public class MasterPredmet extends Predmet {
     }
 
     public void brisiStudenta(MasterStudent ms) throws IllegalArgumentException {
-        int indeks = 0;
-        for (MasterStudent ms1 : getStudenti()) {
+        Iterator it = getStudenti().iterator();
+        while (it.hasNext()) {
+            MasterStudent ms1 = (MasterStudent) it.next();
             if (ms1.equals(ms)) {
-                getStudenti().remove(indeks);
-                setTrenutniBrojStudenata(getTrenutniBrojStudenata() - 1);
+                getStudenti().remove(ms);
+                return;
             }
-            indeks++;
         }
-        if (indeks == getStudenti().size()) throw new IllegalArgumentException(ms.ispisiStudenta() + " nije upisan na ovaj predmet.");
+        throw new IllegalArgumentException(ms.ispisiStudenta() + " nije upisan na ovaj predmet.");
     }
 
     public String ispisiStudenteNaPredmetu() {
