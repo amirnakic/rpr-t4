@@ -13,5 +13,11 @@ public class MasterSemestar extends Semestar {
         izborniPredmeti = new ArrayList<>(this.getBROJ_IZBORNIH_PREDMETA());
     }
 
-    
+    public List<ObavezniMasterPredmet> getObavezniPredmeti() {
+        return obavezniPredmeti;
+    }
+
+    public List<IzborniMasterPredmet> getIzborniPredmeti() {
+        return izborniPredmeti;
+    }
 }
