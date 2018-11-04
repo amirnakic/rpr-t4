@@ -40,4 +40,8 @@ public class Predmet {
     public void setSifraPredmeta(String sifraPredmeta) {
         this.sifraPredmeta = sifraPredmeta;
     }
+
+    public String ispisiPredmet() {
+        return ("Predmet: " + this.getNazivPredmeta() + "(" + this.getSifraPredmeta() + " - " + this.getECTS_BODOVI() + " ECTS - " + this.getTrenutniBrojStudenata() + "/" + this.getMAX_BROJ_STUDENATA() + ")");
+    }
 }
