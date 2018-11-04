@@ -5,11 +5,11 @@ public class Student {
     private int brojIndeksa = 0;
 
     public Student(String ime, String prezime, int brojIndeksa) {
-        this.ime = ime;
-        this.prezime = prezime;
-        this.brojIndeksa = brojIndeksa;
+        this.setIme(ime);
+        this.setPrezime(prezime);
+        this.setBrojIndeksa(brojIndeksa);
     }
-    
+
     public String getIme() {
         return ime;
     }
@@ -33,4 +33,6 @@ public class Student {
     public void setBrojIndeksa(int brojIndeksa) {
         this.brojIndeksa = brojIndeksa;
     }
+
+    
 }
