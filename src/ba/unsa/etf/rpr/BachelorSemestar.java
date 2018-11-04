@@ -96,4 +96,14 @@ public class BachelorSemestar extends Semestar {
         for (IzborniBachelorPredmet ibp : getIzborniPredmeti()) rezultat += ibp.ispisiPredmet() + "\n";
         return rezultat;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof BachelorSemestar) {
+            BachelorSemestar bs = (BachelorSemestar) o;
+            if (bs.getBrojSemestra() == this.getBrojSemestra())
+                return true;
+        }
+        return false;
+    }
 }
