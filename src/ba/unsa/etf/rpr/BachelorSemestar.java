@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class BachelorSemestar extends Semestar {
@@ -42,5 +43,32 @@ public class BachelorSemestar extends Semestar {
         }
     }
 
-    
+    public void brisiPredmet(BachelorPredmet bp) throws IllegalArgumentException {
+        if (bp instanceof ObavezniBachelorPredmet) {
+            Iterator it = getObavezniPredmeti().iterator();
+            while (it.hasNext()) {
+                ObavezniBachelorPredmet obp1 = (ObavezniBachelorPredmet) it.next();
+                if(obp1.equals(bp)) {
+                    getObavezniPredmeti().remove(bp);
+                    setTrenutniBrojObaveznihPredmeta(this.getTrenutniBrojObaveznihPredmeta() - 1);
+                    setTrenutniBrojECTSBodova(this.getUKUPAN_BROJ_ECTS_BODOVA() - bp.getECTS_BODOVI());
+                    return;
+                }
+            }
+            throw new IllegalArgumentException(bp.ispisiPredmet() + " nije dodan u ovaj semestar.");
+        }
+        else {
+            Iterator it = getIzborniPredmeti().iterator();
+            while (it.hasNext()) {
+                IzborniBachelorPredmet ibp1 = (IzborniBachelorPredmet) it.next();
+                if(ibp1.equals(bp)) {
+                    getIzborniPredmeti().remove(bp);
+                    setTrenutniBrojIzbornihPredmeta(this.getTrenutniBrojIzbornihPredmeta() - 1);
+                    setTrenutniBrojECTSBodova(this.getUKUPAN_BROJ_ECTS_BODOVA() - bp.getECTS_BODOVI());
+                    return;
+                }
+            }
+            throw new IllegalArgumentException(bp.ispisiPredmet() + " nije dodan u ovaj semestar.");
+        }
+    }
 }
