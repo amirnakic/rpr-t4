@@ -76,4 +76,11 @@ public class BachelorSemestar extends Semestar {
     public String ispisiSemestar() {
         return ("Bachelor" + super.ispisiSemestar());
     }
+
+    public String ispisiPredmeteUSemestru() {
+        String rezultat = new String("");
+        for (ObavezniBachelorPredmet obp : getObavezniPredmeti()) rezultat += obp.ispisiPredmet() + "\n";
+        for (IzborniBachelorPredmet ibp : getIzborniPredmeti()) rezultat += ibp.ispisiPredmet() + "\n";
+        return rezultat;
+    }
 }
