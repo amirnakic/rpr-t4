@@ -76,4 +76,10 @@ public class MasterSemestar extends Semestar {
     public String ispisiSemestar() {
         return ("Master" + super.ispisiSemestar());
     }
+
+    public String ispisiPredmeteUSemestru() {
+        String rezultat = new String("");
+        for (ObavezniMasterPredmet omp : getObavezniPredmeti()) rezultat += omp.ispisiPredmet() + "\n";
+        for (IzborniMasterPredmet imp : getIzborniPredmeti()) rezultat += imp.ispisiPredmet() + "\n";
+    }
 }
