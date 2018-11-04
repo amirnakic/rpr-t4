@@ -12,4 +12,12 @@ public class BachelorSemestar extends Semestar {
         this.obavezniPredmeti = new ArrayList<>(this.getTrenutniBrojObaveznihPredmeta());
         this.izborniPredmeti = new ArrayList<>(this.getTrenutniBrojIzbornihPredmeta());
     }
+
+    public List<ObavezniBachelorPredmet> getObavezniPredmeti() {
+        return obavezniPredmeti;
+    }
+
+    public List<IzborniBachelorPredmet> getIzborniPredmeti() {
+        return izborniPredmeti;
+    }
 }
