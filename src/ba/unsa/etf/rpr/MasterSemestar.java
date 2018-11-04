@@ -71,4 +71,9 @@ public class MasterSemestar extends Semestar {
             throw new IllegalArgumentException(mp.ispisiPredmet() + " nije dodan u ovaj semestar.");
         }
     }
+
+    @Override
+    public String ispisiSemestar() {
+        return ("Master" + super.ispisiSemestar());
+    }
 }
