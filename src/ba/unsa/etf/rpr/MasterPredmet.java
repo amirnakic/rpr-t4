@@ -37,7 +37,7 @@ public class MasterPredmet extends Predmet {
         throw new IllegalArgumentException(ms.ispisiStudenta() + " nije upisan na ovaj predmet.");
     }
 
-    public MasterStudent pronadjiStudentaPoIndeksu(int brojIndeksa) throws IllegalArgumentException {
+    public MasterStudent dajStudentaPoIndeksu(int brojIndeksa) throws IllegalArgumentException {
         Iterator it = getStudenti().iterator();
         while(it.hasNext()) {
             MasterStudent ms = (MasterStudent) it.next();

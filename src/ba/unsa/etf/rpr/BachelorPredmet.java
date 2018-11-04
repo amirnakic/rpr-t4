@@ -37,6 +37,15 @@ public class BachelorPredmet extends Predmet {
         throw new IllegalArgumentException(bs.ispisiStudenta() + " nije upisan na ovaj predmet.");
     }
 
+    public BachelorStudent dajStudentaPoIndeksu(int brojIndeksa) throws IllegalArgumentException {
+        Iterator it = getStudenti().iterator();
+        while(it.hasNext()) {
+            BachelorStudent ms = (BachelorStudent) it.next();
+            if (ms.getBrojIndeksa() == brojIndeksa) return ms;
+        }
+        throw new IllegalArgumentException("Student sa indeksom " + brojIndeksa + " nije upisan na ovaj predmet.");
+    }
+
     public String ispisiStudenteNaPredmetu() {
         String rezultat = new String("");
         for (BachelorStudent bs : this.getStudenti())
