@@ -10,4 +10,10 @@ public class ObavezniMasterPredmet extends MasterPredmet {
         return ("ObavezniMaster" + super.ispisiPredmet());
     }
 
+    public String ispisiStudenteNaPredmetu() {
+        String rezultat = new String("");
+        for (MasterStudent ms : this.getStudenti())
+            rezultat += ms.ispisiStudenta() + "\n";
+        return rezultat;
+    }
 }
