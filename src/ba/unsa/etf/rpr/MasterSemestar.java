@@ -22,6 +22,12 @@ public class MasterSemestar extends Semestar {
         return izborniPredmeti;
     }
 
+    public boolean provjeriKorektnostSemestra() {
+        if (getObavezniPredmeti().size() == this.getBROJ_OBAVEZNIH_PREDMETA() && getIzborniPredmeti().size() == this.getBROJ_IZBORNIH_PREDMETA() && this.getUKUPAN_BROJ_ECTS_BODOVA() != this.getTrenutniBrojECTSBodova())
+            return false;
+        return true;
+    }
+
     public void dodajPredmet(MasterPredmet mp) throws IllegalArgumentException, ArrayStoreException {
         if (mp instanceof ObavezniMasterPredmet) {
             if (getObavezniPredmeti().contains(mp)) throw new IllegalArgumentException(mp.ispisiPredmet() + " je već dodan u ovaj semestar.");
@@ -40,6 +46,11 @@ public class MasterSemestar extends Semestar {
                 this.setTrenutniBrojIzbornihPredmeta(this.getTrenutniBrojIzbornihPredmeta() + 1);
                 this.setTrenutniBrojECTSBodova(this.getTrenutniBrojECTSBodova() + mp.getECTS_BODOVI());
             }
+        }
+        if (!provjeriKorektnostSemestra()) {
+            getObavezniPredmeti().clear();
+            getIzborniPredmeti().clear();
+            throw new IllegalArgumentException("Unesite ponovo predmete u semestar. Predmeti u zbiru moraju imati preko 30 ECTS-bodova.");
         }
     }
 

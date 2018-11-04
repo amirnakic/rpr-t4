@@ -22,24 +22,38 @@ public class BachelorSemestar extends Semestar {
         return izborniPredmeti;
     }
 
+    public boolean provjeriKorektnostSemestra() {
+        if (getObavezniPredmeti().size() == this.getBROJ_OBAVEZNIH_PREDMETA() && getIzborniPredmeti().size() == this.getBROJ_IZBORNIH_PREDMETA() && this.getUKUPAN_BROJ_ECTS_BODOVA() != this.getTrenutniBrojECTSBodova())
+            return false;
+        return true;
+    }
+
     public void dodajPredmet(BachelorPredmet bp) throws IllegalArgumentException, ArrayStoreException {
         if (bp instanceof ObavezniBachelorPredmet) {
-            if (getObavezniPredmeti().contains(bp)) throw new IllegalArgumentException(bp.ispisiPredmet() + " je već dodan u ovaj semestar.");
-            else if (getObavezniPredmeti().size() == getBROJ_OBAVEZNIH_PREDMETA()) throw new ArrayStoreException(bp.ispisiPredmet() + " nije dodan, jer je popunjen broj obaveznih predmeta u semestru.");
+            if (getObavezniPredmeti().contains(bp))
+                throw new IllegalArgumentException(bp.ispisiPredmet() + " je već dodan u ovaj semestar.");
+            else if (getObavezniPredmeti().size() == getBROJ_OBAVEZNIH_PREDMETA())
+                throw new ArrayStoreException(bp.ispisiPredmet() + " nije dodan, jer je popunjen broj obaveznih predmeta u semestru.");
             else {
-                getObavezniPredmeti().add((ObavezniBachelorPredmet)bp);
+                getObavezniPredmeti().add((ObavezniBachelorPredmet) bp);
                 this.setTrenutniBrojObaveznihPredmeta(this.getTrenutniBrojObaveznihPredmeta() + 1);
                 this.setTrenutniBrojECTSBodova(this.getTrenutniBrojECTSBodova() + bp.getECTS_BODOVI());
             }
-        }
-        else {
-            if (getIzborniPredmeti().contains(bp)) throw new IllegalArgumentException(bp.ispisiPredmet() + " je već dodan u ovaj semestar.");
-            else if (getIzborniPredmeti().size() == getBROJ_IZBORNIH_PREDMETA()) throw new ArrayStoreException(bp.ispisiPredmet() + " nije dodan, jer je popunjen broj obaveznih predmeta u semestru.");
+        } else {
+            if (getIzborniPredmeti().contains(bp))
+                throw new IllegalArgumentException(bp.ispisiPredmet() + " je već dodan u ovaj semestar.");
+            else if (getIzborniPredmeti().size() == getBROJ_IZBORNIH_PREDMETA())
+                throw new ArrayStoreException(bp.ispisiPredmet() + " nije dodan, jer je popunjen broj obaveznih predmeta u semestru.");
             else {
-                getIzborniPredmeti().add((IzborniBachelorPredmet)bp);
+                getIzborniPredmeti().add((IzborniBachelorPredmet) bp);
                 this.setTrenutniBrojIzbornihPredmeta(this.getTrenutniBrojIzbornihPredmeta() + 1);
                 this.setTrenutniBrojECTSBodova(this.getTrenutniBrojECTSBodova() + bp.getECTS_BODOVI());
             }
+        }
+        if (!provjeriKorektnostSemestra()) {
+            getObavezniPredmeti().clear();
+            getIzborniPredmeti().clear();
+            throw new IllegalArgumentException("Unesite ponovo predmete u semestar. Predmeti u zbiru moraju imati preko 30 ECTS-bodova.");
         }
     }
 
@@ -48,7 +62,7 @@ public class BachelorSemestar extends Semestar {
             Iterator it = getObavezniPredmeti().iterator();
             while (it.hasNext()) {
                 ObavezniBachelorPredmet obp1 = (ObavezniBachelorPredmet) it.next();
-                if(obp1.equals(bp)) {
+                if (obp1.equals(bp)) {
                     getObavezniPredmeti().remove(bp);
                     setTrenutniBrojObaveznihPredmeta(this.getTrenutniBrojObaveznihPredmeta() - 1);
                     setTrenutniBrojECTSBodova(this.getUKUPAN_BROJ_ECTS_BODOVA() - bp.getECTS_BODOVI());
@@ -56,12 +70,11 @@ public class BachelorSemestar extends Semestar {
                 }
             }
             throw new IllegalArgumentException(bp.ispisiPredmet() + " nije dodan u ovaj semestar.");
-        }
-        else {
+        } else {
             Iterator it = getIzborniPredmeti().iterator();
             while (it.hasNext()) {
                 IzborniBachelorPredmet ibp1 = (IzborniBachelorPredmet) it.next();
-                if(ibp1.equals(bp)) {
+                if (ibp1.equals(bp)) {
                     getIzborniPredmeti().remove(bp);
                     setTrenutniBrojIzbornihPredmeta(this.getTrenutniBrojIzbornihPredmeta() - 1);
                     setTrenutniBrojECTSBodova(this.getUKUPAN_BROJ_ECTS_BODOVA() - bp.getECTS_BODOVI());
