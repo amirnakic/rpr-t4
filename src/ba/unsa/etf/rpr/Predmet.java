@@ -2,13 +2,14 @@ package ba.unsa.etf.rpr;
 
 public class Predmet {
     private String nazivPredmeta = "", sifraPredmeta = "";
-    private int trenutniBrojStudenata = 0;
+    protected int trenutniBrojStudenata = 0;
     private final int ECTS_BODOVI;
     private final int MAX_BROJ_STUDENATA;
 
     public Predmet(String nazivPredmeta, String sifraPredmeta, int ects, int maxBrojStudenata) {
         this.setNazivPredmeta(nazivPredmeta);
         this.setSifraPredmeta(sifraPredmeta);
+        this.trenutniBrojStudenata = 0;
         this.ECTS_BODOVI = ects;
         this.MAX_BROJ_STUDENATA = maxBrojStudenata;
     }
