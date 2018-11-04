@@ -38,4 +38,8 @@ public class MasterCiklus extends Ciklus {
         throw new IllegalArgumentException(ms.ispisiSemestar() + " nije dodan u ovaj ciklus.");
     }
 
+    @Override
+    public String ispisiCiklus() {
+        return ("Master" + super.ispisiCiklus());
+    }
 }
