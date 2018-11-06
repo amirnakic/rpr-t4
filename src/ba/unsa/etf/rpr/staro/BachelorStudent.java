@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.staro;
 
 public class BachelorStudent extends Student {
     public BachelorStudent(String ime, String prezime, int brojIndeksa) {

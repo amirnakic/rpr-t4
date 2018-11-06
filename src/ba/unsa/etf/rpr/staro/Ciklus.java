@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.staro;
 
 public class Ciklus {
     protected int trenutniBrojSemestara = 0;

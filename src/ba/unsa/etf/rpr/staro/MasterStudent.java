@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.staro;
 
 public class MasterStudent extends Student {
     public MasterStudent(String ime, String prezime, int brojIndeksa) {
