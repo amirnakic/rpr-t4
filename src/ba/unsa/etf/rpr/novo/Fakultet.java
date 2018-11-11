@@ -6,5 +6,19 @@ public class Fakultet {
     private String imeFakulteta;
     private Set<Upis> upisani;
 
-    
+    public String getImeFakulteta() {
+        return imeFakulteta;
+    }
+
+    public void setImeFakulteta(String imeFakulteta) {
+        this.imeFakulteta = imeFakulteta;
+    }
+
+    public Set<Upis> getUpisani() {
+        return upisani;
+    }
+
+    public void setUpisani(Set<Upis> upisani) {
+        this.upisani = upisani;
+    }
 }
