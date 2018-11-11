@@ -9,8 +9,6 @@ public class Upis {
         setStudent(student);
         setPredmet(predmet);
         setPlanStudija(planStudija);
-        predmet.dodajStudenta(student);
-        planStudija.dodajPredmet(predmet);
     }
 
     public Student getStudent() {
