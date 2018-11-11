@@ -9,9 +9,10 @@ public class Predmet {
     private final int MAX_BROJ_STUDENATA = 60;
     private List<Student> studentiNaPredmetu = new ArrayList<>();
 
-    public Predmet(String imePredmeta, int ects, List<Student> studenti) {
+    public Predmet(String imePredmeta, int ects, int brojSemestra, List<Student> studenti) {
         setImePredmeta(imePredmeta);
         setEcts(ects);
+        setBrojSemestra(brojSemestra);
         setStudentiNaPredmetu(studenti);
     }
 

@@ -29,6 +29,13 @@ public class PlanStudija {
             throw new IllegalArgumentException("Dodavanjem ovog predmeta bio bi prekoračen dozvoljeni broj ECTS bodova.");
     }
 
+    public void ukloniPredmet(Predmet p) throws IllegalArgumentException {
+        List<Predmet> predmeti = getPlanStudija().get(p.getBrojSemestra());
+        if (predmeti.contains(p))
+            predmeti.remove(p);
+        else throw new IllegalArgumentException("Nepostojeći predmet.");
+    }
+
     public String getSmjer() {
         return smjer;
     }
