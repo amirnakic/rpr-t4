@@ -11,7 +11,13 @@ public class Fakultet {
         setUpisani(upisani);
     }
 
+    public void upisiStudenta(Upis u, int brojSemestra) {
+        if (provjeriEctsBodoveStudenta(u, brojSemestra))
+            getUpisani().add(u);
+    }
+
     
+
     public boolean provjeriEctsBodoveStudenta(Upis test, int brojSemestra) {
         int ukupanBrojEctsBodova = 0;
         for (Predmet p : test.getPlanStudija().getPlanStudija().get(brojSemestra))
