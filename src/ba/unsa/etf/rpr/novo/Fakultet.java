@@ -11,6 +11,15 @@ public class Fakultet {
         setUpisani(upisani);
     }
 
+    
+    public boolean provjeriEctsBodoveStudenta(Upis test, int brojSemestra) {
+        int ukupanBrojEctsBodova = 0;
+        for (Predmet p : test.getPlanStudija().getPlanStudija().get(brojSemestra))
+            ukupanBrojEctsBodova += p.getEcts();
+        if (ukupanBrojEctsBodova >= 30) return true;
+        return false;
+    }
+
     public String getImeFakulteta() {
         return imeFakulteta;
     }
