@@ -7,6 +7,11 @@ public class PlanStudija {
     private String smjer;
     Map<Integer, List<Student>> planStudija;
 
+    public PlanStudija(String smjer, Map<Integer, List<Student>> studenti) {
+        setSmjer(smjer);
+        setPlanStudija(studenti);
+    }
+
     public String getSmjer() {
         return smjer;
     }
