@@ -12,8 +12,17 @@ public class Fakultet {
         setUpisani(upisani);
     }
 
-    public void upisi(Upis u) throws IllegalArgumentException {
+    public void upisi(Upis u) {
         getUpisani().add(u);
+    }
+
+    public void ispisiStudentaSaPredmeta(Student s, Predmet p) throws IllegalArgumentException {
+        for (Upis u : getUpisani())
+            if (u.getStudent().equals(s) && u.getPredmet().equals(p)) {
+                getUpisani().remove(u);
+                return;
+            }
+        throw new IllegalArgumentException("Nije pronađen student upisan na navedeni predmet.");
     }
 
     public int dajEctsBodoveStudentaUSemestru(Student s, int brojSemestra) {

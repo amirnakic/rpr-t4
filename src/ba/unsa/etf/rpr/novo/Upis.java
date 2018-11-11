@@ -5,10 +5,12 @@ public class Upis {
     private Predmet predmet;
     private PlanStudija planStudija;
 
-    public Upis(Student student, Predmet predmet, PlanStudija planStudija) {
+    public Upis(Student student, Predmet predmet, PlanStudija planStudija) throws ArrayStoreException, IllegalArgumentException {
         setStudent(student);
         setPredmet(predmet);
         setPlanStudija(planStudija);
+        predmet.dodajStudenta(student);
+        planStudija.dodajPredmet(predmet);
     }
 
     public Student getStudent() {
