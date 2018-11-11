@@ -52,6 +52,11 @@ public class Predmet {
         this.studentiNaPredmetu = studentiNaPredmetu;
     }
 
+    public void dodajStudenta(Student s) throws ArrayStoreException {
+        if (getStudentiNaPredmetu().size() == 60) throw new ArrayStoreException("Kapacitet predmeta je popunjen.");
+        else getStudentiNaPredmetu().add(s);
+    }
+
     public String ispisiStudenteNaPredmetu() {
         String rezultat = "Studenti na predmetu " + getImePredmeta() + " su:\n";
         for (Student s : getStudentiNaPredmetu())
