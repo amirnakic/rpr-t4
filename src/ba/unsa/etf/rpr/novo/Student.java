@@ -33,4 +33,8 @@ public class Student {
     public void setBrojIndeksa(int brojIndeksa) {
         this.brojIndeksa = brojIndeksa;
     }
+
+    public String ispisiStudenta() {
+        return getIme() + getPrezime() + " (" + getBrojIndeksa() + ")";
+    }
 }
