@@ -51,4 +51,11 @@ public class Predmet {
     public void setStudentiNaPredmetu(List<Student> studentiNaPredmetu) {
         this.studentiNaPredmetu = studentiNaPredmetu;
     }
+
+    public String ispisiStudenteNaPredmetu() {
+        String rezultat = "Studenti na predmetu " + getImePredmeta() + " su:\n";
+        for (Student s : getStudentiNaPredmetu())
+            rezultat += s.ispisiStudenta() + "\n";
+        return rezultat;
+    }
 }
