@@ -5,6 +5,12 @@ public class Upis {
     private Predmet predmet;
     private PlanStudija planStudija;
 
+    public Upis(Student student, Predmet predmet, PlanStudija planStudija) {
+        setStudent(student);
+        setPredmet(predmet);
+        setPlanStudija(planStudija);
+    }
+
     public Student getStudent() {
         return student;
     }
