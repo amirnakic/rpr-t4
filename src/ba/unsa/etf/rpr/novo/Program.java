@@ -22,9 +22,9 @@ public class Program {
         Predmet p3 = new Predmet("Projektovanje logičkih sistema", 5, 5, studenti3);
         Predmet p4 = new Predmet("Digitalni sistemi upravljanja", 5, 5, studenti3);
         Predmet p5 = new Predmet("Praktikum elektronike", 5, 5, studenti2);
-        Predmet p6 = new Predmet("Osnove energetske elektronike", 5, 5, studenti2);
-        Predmet p7 = new Predmet("Digitalni integrirani krugovi", 5, 5, studenti3);
-        Predmet p8 = new Predmet("Signali i sistemi", 5, 5, studenti3);
+        Predmet p6 = new Predmet("Digitalni integrirani krugovi", 5, 5, studenti3);
+        Predmet p8 = new Predmet("Osnove energetske elektronike", 5, 5, studenti2);
+        Predmet p7 = new Predmet("Signali i sistemi", 5, 5, studenti3);
         Predmet p9 = new Predmet("Diskretna matematika", 5, 3, studenti2);
         Predmet p10 = new Predmet("Inženjerska matematika 1", 7, 1, studenti4);
         Predmet p11 = new Predmet("Inženjerska fizika 1", 6, 1, studenti4);
