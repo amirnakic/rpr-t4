@@ -35,6 +35,6 @@ public class Student {
     }
 
     public String ispisiStudenta() {
-        return getIme() + getPrezime() + " (" + getBrojIndeksa() + ")";
+        return getIme() + " " + getPrezime() + " (" + getBrojIndeksa() + ")";
     }
 }
