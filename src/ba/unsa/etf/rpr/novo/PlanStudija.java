@@ -12,21 +12,11 @@ public class PlanStudija {
         setPlanStudija(studenti);
     }
 
-    public int provjeriEctsBodove(List<Predmet> predmeti) {
-        int brojEctsBodova = 0;
-        for (Predmet p : predmeti)
-            brojEctsBodova += p.getEcts();
-        return brojEctsBodova;
-    }
-
     public void dodajPredmet(Predmet p) throws IllegalArgumentException {
         if (getPlanStudija().get(p.getBrojSemestra()) == null)
             throw new IllegalArgumentException("Predmet ne pripada ovom planu studija.");
         List<Predmet> predmeti = getPlanStudija().get(p.getBrojSemestra());
-        if (provjeriEctsBodove(predmeti) + p.getEcts() < 30)
-            predmeti.add(p);
-        else
-            throw new IllegalArgumentException("Dodavanjem ovog predmeta bio bi prekoračen dozvoljeni broj ECTS bodova.");
+        predmeti.add(p);
     }
 
     public void ukloniPredmet(Predmet p) throws IllegalArgumentException {
