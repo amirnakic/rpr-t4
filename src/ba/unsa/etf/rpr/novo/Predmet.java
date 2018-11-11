@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Predmet {
     private String imePredmeta;
-    private int ects;
+    private int ects, brojSemestra;
     private final int MAX_BROJ_STUDENATA = 60;
     private List<Student> studentiNaPredmetu = new ArrayList<>();
 
@@ -13,6 +13,14 @@ public class Predmet {
         setImePredmeta(imePredmeta);
         setEcts(ects);
         setStudentiNaPredmetu(studenti);
+    }
+
+    public int getBrojSemestra() {
+        return brojSemestra;
+    }
+
+    public void setBrojSemestra(int brojSemestra) {
+        this.brojSemestra = brojSemestra;
     }
 
     public String getImePredmeta() {
