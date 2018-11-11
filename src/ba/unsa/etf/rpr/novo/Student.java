@@ -37,4 +37,12 @@ public class Student {
     public String ispisiStudenta() {
         return getIme() + " " + getPrezime() + " (" + getBrojIndeksa() + ")";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        Student s = (Student) o;
+        if (this.getIme().equals(s.getIme()) && this.getPrezime().equals(s.getPrezime()) && this.getBrojIndeksa() == s.getBrojIndeksa())
+            return true;
+        return false;
+    }
 }
