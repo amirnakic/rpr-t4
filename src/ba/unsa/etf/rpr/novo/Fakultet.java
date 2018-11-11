@@ -1,5 +1,8 @@
 package ba.unsa.etf.rpr.novo;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Fakultet {
@@ -16,7 +19,7 @@ public class Fakultet {
             getUpisani().add(u);
     }
 
-    public void ispisiStudenta(Student s) {
+    public void izbaciStudenta(Student s) {
         for (Upis u : getUpisani())
             if (u.getStudent().equals(s))
                 upisani.remove(u);
@@ -28,6 +31,20 @@ public class Fakultet {
             ukupanBrojEctsBodova += p.getEcts();
         if (ukupanBrojEctsBodova >= 30) return true;
         return false;
+    }
+
+    public Set<Student> dajUpisaneStudente() {
+        Set<Student> rezultat = new HashSet<>();
+        for (Upis u : getUpisani())
+            rezultat.add(u.getStudent());
+        return rezultat;
+    }
+
+    public Set<Predmet> dajUpisanePredmete() {
+        Set<Predmet> rezultat = new HashSet<>();
+        for (Upis u : getUpisani())
+            rezultat.add(u.getPredmet());
+        return rezultat;
     }
 
     public String getImeFakulteta() {
