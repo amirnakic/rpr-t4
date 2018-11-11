@@ -16,13 +16,16 @@ public class Fakultet {
         getUpisani().add(u);
     }
 
-    public void ispisiStudentaSaPredmeta(Student s, Predmet p) throws IllegalArgumentException {
+    public void ispisiStudentaSaPredmeta(Student s, Predmet p) {
         for (Upis u : getUpisani())
-            if (u.getStudent().equals(s) && u.getPredmet().equals(p)) {
+            if (u.getStudent().equals(s) && u.getPredmet().equals(p))
                 getUpisani().remove(u);
-                return;
-            }
-        throw new IllegalArgumentException("Nije pronađen student upisan na navedeni predmet.");
+    }
+
+    public void ispisiStudentaSaFakulteta(Student s) {
+        for (Upis u : getUpisani())
+            if (u.getStudent().equals(s))
+                getUpisani().remove(s);
     }
 
     public int dajEctsBodoveStudentaUSemestru(Student s, int brojSemestra) {
