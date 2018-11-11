@@ -33,19 +33,37 @@ public class Fakultet {
         return ukupanBrojEctsBodova;
     }
 
-    public Set<Student> dajUpisaneStudente() {
+    public Set<Student> dajStudenteUpisaneNaFakultet() {
         Set<Student> rezultat = new HashSet<>();
         for (Upis u : getUpisani())
             rezultat.add(u.getStudent());
         return rezultat;
     }
 
-    public Set<Predmet> dajUpisanePredmete() {
+    public Set<Predmet> dajPredmeteNaKojeSuUpisaniStudenti() {
         Set<Predmet> rezultat = new HashSet<>();
         for (Upis u : getUpisani())
             rezultat.add(u.getPredmet());
         return rezultat;
     }
+
+    public Set<Student> dajStudenteUpisaneUSemestar(int brojSemestra) {
+        Set<Student> rezultat = new HashSet<>();
+        for (Upis u : getUpisani())
+            if (u.getPlanStudija().getPlanStudija().get(brojSemestra).contains(u.getPredmet()))
+                rezultat.add(u.getStudent());
+        return rezultat;
+    }
+
+    public Set<Predmet> dajPredmeteUSemestruNaKojeSuUpisaniStudenti(int brojSemestra) {
+        Set<Predmet> rezultat = new HashSet<>();
+        for (Upis u : getUpisani())
+            if (u.getPlanStudija().getPlanStudija().get(brojSemestra).contains(u.getPredmet()))
+                rezultat.add(u.getPredmet());
+        return rezultat;
+    }
+
+    
 
     public String getImeFakulteta() {
         return imeFakulteta;

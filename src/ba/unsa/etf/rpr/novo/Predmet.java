@@ -1,7 +1,9 @@
 package ba.unsa.etf.rpr.novo;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class Predmet {
     private String imePredmeta;
@@ -61,13 +63,6 @@ public class Predmet {
         if (getStudentiNaPredmetu().contains(s))
             getStudentiNaPredmetu().remove(s);
         else throw new IllegalArgumentException("Student ne sluša ovaj predmet.");
-    }
-
-    public String ispisiStudenteNaPredmetu() {
-        String rezultat = "Studenti na predmetu " + getImePredmeta() + " su:\n";
-        for (Student s : getStudentiNaPredmetu())
-            rezultat += s.ispisiStudenta() + "\n";
-        return rezultat;
     }
 
     @Override
