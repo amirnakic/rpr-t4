@@ -16,7 +16,11 @@ public class Fakultet {
             getUpisani().add(u);
     }
 
-    
+    public void ispisiStudenta(Student s) {
+        for (Upis u : getUpisani())
+            if (u.getStudent().equals(s))
+                upisani.remove(u);
+    }
 
     public boolean provjeriEctsBodoveStudenta(Upis test, int brojSemestra) {
         int ukupanBrojEctsBodova = 0;
