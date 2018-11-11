@@ -1,9 +1,7 @@
 package ba.unsa.etf.rpr.novo;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Set;
 
 public class Predmet {
     private String imePredmeta;
@@ -52,17 +50,6 @@ public class Predmet {
 
     public void setStudentiNaPredmetu(List<Student> studentiNaPredmetu) {
         this.studentiNaPredmetu = studentiNaPredmetu;
-    }
-
-    public void dodajStudenta(Student s) throws ArrayStoreException {
-        if (getStudentiNaPredmetu().size() == 60) throw new ArrayStoreException("Kapacitet predmeta je popunjen.");
-        else getStudentiNaPredmetu().add(s);
-    }
-
-    public void ukloniStudenta(Student s) throws IllegalArgumentException {
-        if (getStudentiNaPredmetu().contains(s))
-            getStudentiNaPredmetu().remove(s);
-        else throw new IllegalArgumentException("Student ne sluša ovaj predmet.");
     }
 
     @Override
