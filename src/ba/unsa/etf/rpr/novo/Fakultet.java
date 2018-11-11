@@ -18,14 +18,16 @@ public class Fakultet {
 
     public void ispisiStudentaSaPredmeta(Student s, Predmet p) {
         for (Upis u : getUpisani())
-            if (u.getStudent().equals(s) && u.getPredmet().equals(p))
+            if (u.getStudent().equals(s) && u.getPredmet().equals(p)) {
                 getUpisani().remove(u);
+                return;
+            }
     }
 
     public void ispisiStudentaSaFakulteta(Student s) {
-        for (Upis u : getUpisani())
-            if (u.getStudent().equals(s))
-                getUpisani().remove(s);
+        Set<Predmet> predmeti = this.dajPredmeteNaKojeJeUpisanStudent(s);
+        for (Predmet p : predmeti)
+            ispisiStudentaSaPredmeta(s, p);
     }
 
     public int dajEctsBodoveStudentaUSemestru(Student s, int brojSemestra) {
