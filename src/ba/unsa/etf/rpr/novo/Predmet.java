@@ -57,4 +57,13 @@ public class Predmet {
             rezultat += s.ispisiStudenta() + "\n";
         return rezultat;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        Predmet p = (Predmet) o;
+        if (this.getImePredmeta().equals(p.getImePredmeta()) && this.getStudentiNaPredmetu().equals(p.getStudentiNaPredmetu()) &&
+                this.getMAX_BROJ_STUDENATA() == p.getMAX_BROJ_STUDENATA() && this.getBrojSemestra() == p.getBrojSemestra() && this.getEcts() == p.getEcts())
+            return true;
+        return false;
+    }
 }
