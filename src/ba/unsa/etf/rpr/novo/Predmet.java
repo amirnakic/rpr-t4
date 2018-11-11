@@ -57,6 +57,12 @@ public class Predmet {
         else getStudentiNaPredmetu().add(s);
     }
 
+    public void ukloniStudenta(Student s) throws IllegalArgumentException {
+        if (getStudentiNaPredmetu().contains(s))
+            getStudentiNaPredmetu().remove(s);
+        else throw new IllegalArgumentException("Student ne sluša ovaj predmet.");
+    }
+
     public String ispisiStudenteNaPredmetu() {
         String rezultat = "Studenti na predmetu " + getImePredmeta() + " su:\n";
         for (Student s : getStudentiNaPredmetu())
