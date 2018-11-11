@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class PlanStudija {
     private String smjer;
-    Map<Integer, List<Student>> planStudija;
+    Map<Integer, List<Predmet>> planStudija;
 
-    public PlanStudija(String smjer, Map<Integer, List<Student>> studenti) {
+    public PlanStudija(String smjer, Map<Integer, List<Predmet>> studenti) {
         setSmjer(smjer);
         setPlanStudija(studenti);
     }
@@ -20,11 +20,11 @@ public class PlanStudija {
         this.smjer = smjer;
     }
 
-    public Map<Integer, List<Student>> getPlanStudija() {
+    public Map<Integer, List<Predmet>> getPlanStudija() {
         return planStudija;
     }
 
-    public void setPlanStudija(Map<Integer, List<Student>> planStudija) {
+    public void setPlanStudija(Map<Integer, List<Predmet>> planStudija) {
         this.planStudija = planStudija;
     }
 }
