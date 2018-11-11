@@ -4,11 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 public class PlanStudija {
-    private String smjer;
     Map<Integer, List<Predmet>> planStudija;
 
-    public PlanStudija(String smjer, Map<Integer, List<Predmet>> studenti) {
-        setSmjer(smjer);
+    public PlanStudija(Map<Integer, List<Predmet>> studenti) {
         setPlanStudija(studenti);
     }
 
@@ -33,14 +31,6 @@ public class PlanStudija {
         for (Predmet p : getPlanStudija().get(brojSemestra))
             brojEctsBodovaUSemestru += p.getEcts();
         return brojEctsBodovaUSemestru;
-    }
-
-    public String getSmjer() {
-        return smjer;
-    }
-
-    public void setSmjer(String smjer) {
-        this.smjer = smjer;
     }
 
     public Map<Integer, List<Predmet>> getPlanStudija() {
