@@ -4,6 +4,12 @@ public class Student {
     private String ime, prezime;
     private int brojIndeksa;
 
+    public Student(String ime, String prezime, int brojIndeksa) {
+        setIme(ime);
+        setPrezime(prezime);
+        setBrojIndeksa(brojIndeksa);
+    }
+
     public String getIme() {
         return ime;
     }
