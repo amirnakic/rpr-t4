@@ -63,7 +63,21 @@ public class Fakultet {
         return rezultat;
     }
 
-    
+    public Set<Student> dajStudenteUpisaneNaPredmet(Predmet p) {
+        Set<Student> rezultat = new HashSet<>();
+        for (Upis u : getUpisani())
+            if (u.getPredmet().equals(p))
+                rezultat.add(u.getStudent());
+        return rezultat;
+    }
+
+    public Set<Predmet> dajPredmeteNaKojeJeUpisanStudent(Student s) {
+        Set<Predmet> rezultat = new HashSet<>();
+        for (Upis u : getUpisani())
+            if (u.getStudent().equals(s))
+                rezultat.add(u.getPredmet());
+        return rezultat;
+    }
 
     public String getImeFakulteta() {
         return imeFakulteta;
