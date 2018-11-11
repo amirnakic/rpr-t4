@@ -12,6 +12,13 @@ public class PlanStudija {
         setPlanStudija(studenti);
     }
 
+    public void dodajPredmet(Predmet p) throws IllegalArgumentException {
+        if (getPlanStudija().get(p.getBrojSemestra()) == null)
+            throw new IllegalArgumentException("Predmet ne pripada ovom planu studija.");
+        List<Predmet> predmeti = getPlanStudija().get(p.getBrojSemestra());
+        predmeti.add(p);
+    }
+
     public String getSmjer() {
         return smjer;
     }
