@@ -26,6 +26,15 @@ public class PlanStudija {
         else throw new IllegalArgumentException("Nepostojeći predmet.");
     }
 
+    public int dajBrojEctsBodovaUSemestru(int brojSemestra) throws IllegalArgumentException {
+        int brojEctsBodovaUSemestru = 0;
+        if (getPlanStudija().get(brojSemestra) == null)
+            throw new IllegalArgumentException("Semestar nije evidentiran.");
+        for (Predmet p : getPlanStudija().get(brojSemestra))
+            brojEctsBodovaUSemestru += p.getEcts();
+        return brojEctsBodovaUSemestru;
+    }
+
     public String getSmjer() {
         return smjer;
     }

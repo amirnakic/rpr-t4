@@ -12,8 +12,8 @@ public class Fakultet {
         setUpisani(upisani);
     }
 
-    /*public void upisiStudenta(Upis u, int brojSemestra) {
-        if (provjeriEctsBodoveStudenta(u, brojSemestra))
+    /*public void upisi(Upis u) throws IllegalArgumentException {
+        if (dajEctsBodoveStudenta(u.getStudent()) + u.getPredmet().getEcts() < 30)
             getUpisani().add(u);
     }
 
@@ -21,7 +21,7 @@ public class Fakultet {
         for (Upis u : getUpisani())
             if (u.getStudent().equals(s))
                 upisani.remove(u);
-    }*/
+    }
 
     public int dajEctsBodoveStudenta(Student s) {
         int ukupanBrojEctsBodova = 0;
@@ -29,7 +29,7 @@ public class Fakultet {
             if (u.getStudent().equals(s))
                 ukupanBrojEctsBodova += u.getPredmet().getEcts();
         return ukupanBrojEctsBodova;
-    }
+    }*/
 
     public Set<Student> dajUpisaneStudente() {
         Set<Student> rezultat = new HashSet<>();
